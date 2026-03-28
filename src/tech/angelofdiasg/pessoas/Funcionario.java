@@ -1,9 +1,11 @@
 package tech.angelofdiasg.pessoas;
 
+import java.time.LocalDate;
+
 public class Funcionario extends Pessoa{
     private int matricula;
     private String cargo;
-    private String dataAdmissao;
+    private LocalDate dataAdmissao;
     private double salario;
 
     public void reajustarSalario(double percentual){
@@ -30,11 +32,11 @@ public class Funcionario extends Pessoa{
         this.cargo = cargo;
     }
 
-    public String getDataAdmissao() {
+    public LocalDate getDataAdmissao() {
         return dataAdmissao;
     }
 
-    public void setDataAdmissao(String dataAdmissao) {
+    public void setDataAdmissao(LocalDate dataAdmissao) {
         this.dataAdmissao = dataAdmissao;
     }
 

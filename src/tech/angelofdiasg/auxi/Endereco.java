@@ -10,6 +10,22 @@ public class Endereco {
     public Endereco() {
     }
 
+    public Endereco(String rua, String numero, String cidade, String estado, String cep) {
+        this.rua = rua;
+        this.numero = numero;
+        this.cidade = cidade;
+        this.estado = estado;
+        this.cep = cep;
+    }
+
+    public Endereco(String cep, String numero) {
+        this.cep = cep;
+        this.numero = numero;
+        this.rua = "API Rua";
+        this.cidade = "API Cidade";
+        this.estado = "API Estado";
+    }
+
     public String getRua() {
         return rua;
     }

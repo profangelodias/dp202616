@@ -4,6 +4,10 @@ public class Cliente extends Pessoa{
     private String codigo;
     private String profissao;
 
+    public void cadastrar(){
+        System.out.println("Cadastro do cliente realizado com sucesso!");
+    }
+
     public String getCodigo() {
         return codigo;
     }
