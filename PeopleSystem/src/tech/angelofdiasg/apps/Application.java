@@ -1,29 +1,55 @@
 package tech.angelofdiasg.apps;
 
+import tech.angelofdiasg.auxi.Endereco;
+import tech.angelofdiasg.auxi.Telefone;
 import tech.angelofdiasg.pessoas.Cliente;
 import tech.angelofdiasg.pessoas.Funcionario;
 
+import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
+
 public class Application {
     public static void main(String[] args) {
+        Endereco endCliente = new Endereco("Rua A", "123", "Cidade X", "Estado Y", "12345-678");
+
         // Criar e preencher Cliente
         Cliente cliente = new Cliente();
         cliente.setNome("João Silva");
-        cliente.setDataNascimento("15/05/1985");
-        cliente.setEndereco("Rua A, 123");
-        cliente.setTelsContato("9999-8888");
+        cliente.setDataNascimento(LocalDate.of(1985, 5, 15));
+        cliente.setEndereco(endCliente);
+
+        // Criar 2 telefones para Cliente
+        List<Telefone> telsCliente = new ArrayList<>();
+        telsCliente.add(new Telefone("11", "9999-8888"));
+        telsCliente.add(new Telefone("11", "3333-4444"));
+        cliente.setTelsContato(telsCliente);
+
         cliente.setCodigo("CLI001");
         cliente.setProfissao("Engenheiro");
 
+        cliente.cadastrar();
+
         // Criar e preencher Funcionario
+        Endereco endFuncionario = new Endereco("Rua B", "456", "Cidade Z", "Estado W", "87654-321");
+
         Funcionario funcionario = new Funcionario();
         funcionario.setNome("Maria Oliveira");
-        funcionario.setDataNascimento("20/10/1990");
-        funcionario.setEndereco("Rua B, 456");
-        funcionario.setTelsContato("7777-6666");
+        funcionario.setDataNascimento(LocalDate.of(1990, 10, 20));
+        funcionario.setEndereco(endFuncionario);
+
+        // Criar 2 telefones para Funcionário
+        List<Telefone> telsFuncionario = new ArrayList<>();
+        telsFuncionario.add(new Telefone("11", "7777-6666"));
+        telsFuncionario.add(new Telefone("11", "2222-3333"));
+        funcionario.setTelsContato(telsFuncionario);
+
         funcionario.setMatricula(12345);
         funcionario.setCargo("Analista");
-        funcionario.setDataAdmissao("01/01/2020");
+        funcionario.setDataAdmissao(LocalDate.of(2020, 1, 1));
         funcionario.setSalario(5000.00);
+        funcionario.cadastrar();
+
 
         // Imprimir no console
         System.out.println("Cliente:");

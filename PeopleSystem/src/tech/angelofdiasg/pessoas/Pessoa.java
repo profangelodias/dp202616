@@ -1,12 +1,15 @@
 package tech.angelofdiasg.pessoas;
 
-import tech.angelofdiasg.auxi.Endereco;
+import tech.angelofdiasg.auxi.*;
+
+import java.time.LocalDate;
+import java.util.List;
 
 public class Pessoa {
     protected String nome;
-    protected String dataNascimento;
+    protected LocalDate dataNascimento;
     protected Endereco endereco;
-    protected String telsContato;
+    protected List<Telefone> telsContato;
 
     public void cadastrar(){}
     public int obterIdade(){
@@ -21,11 +24,11 @@ public class Pessoa {
         this.nome = nome;
     }
 
-    public String getDataNascimento() {
+    public LocalDate getDataNascimento() {
         return dataNascimento;
     }
 
-    public void setDataNascimento(String dataNascimento) {
+    public void setDataNascimento(LocalDate dataNascimento) {
         this.dataNascimento = dataNascimento;
     }
 
@@ -37,11 +40,11 @@ public class Pessoa {
         this.endereco = endereco;
     }
 
-    public String getTelsContato() {
+    public List<Telefone> getTelsContato() {
         return telsContato;
     }
 
-    public void setTelsContato(String telsContato) {
+    public void setTelsContato(List<Telefone> telsContato) {
         this.telsContato = telsContato;
     }
 }
